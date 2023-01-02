@@ -8,7 +8,10 @@ using Microsoft.Extensions.Configuration;
 namespace Persistance.Contexts;
 
 public class BaseDbContext : DbContext
+
+
 {
+
     protected IConfiguration Configuration { get; set; }
 
     public DbSet<Product> Products { get; set; }
@@ -27,6 +30,7 @@ public class BaseDbContext : DbContext
     public BaseDbContext(DbContextOptions<BaseDbContext> dbContextOptions, IConfiguration configuration) : base(dbContextOptions)
     {
         Configuration = configuration;
+        AppContext.SetSwitch("Npgsql.EnableLegacyTimestampBehavior", true);
     }
 
     protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
