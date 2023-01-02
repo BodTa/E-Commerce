@@ -105,12 +105,10 @@
     <Folder Include="Features\Users\Queries\GetListUser\" />
     <Folder Include="Features\Users\Queries\GetByIdUser\" />
     <Folder Include="Features\Users\Rules\" />
-    <Folder Include="Services\AuthService\" />
-    <Folder Include="Services\BrandService\" />
-    <Folder Include="Services\CarService\" />
-    <Folder Include="Services\ColorService\" />
-    <Folder Include="Services\CompanyService\" />
-    <Folder Include="Services\Repositories\" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <PackageReference Include="Microsoft.Extensions.DependencyInjection.Abstractions" Version="6.0.0" />
   </ItemGroup>
 
 </Project>
