@@ -11,8 +11,6 @@ public class BaseDbContext : DbContext
 {
     protected IConfiguration Configuration { get; set; }
 
-
-
     public DbSet<Product> Products { get; set; }
 
     public DbSet<Company> Companies { get; set; }
