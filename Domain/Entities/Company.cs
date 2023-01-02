@@ -9,8 +9,8 @@ public class Company : Entity
     public string Name { get; set; }
 
     public string Description { get; set; }
-    public DateTime JoinTime { get; set; }
-
+    public DateTime JoinDate { get; set; }
+    
     public CompanyState State { get; set; }
 
     public City City { get; set; }
@@ -23,12 +23,12 @@ public class Company : Entity
         Products = new HashSet<Product>();
     }
 
-    public Company(int id, string name, string description, DateTime joinTime, City city ) : this()
+    public Company(int id, string name, string description, DateTime joinDate, City city ) : this()
     {
         Id = id;
         Name = name;
         Description = description;
-        JoinTime = joinTime;
+        JoinDate = joinDate;
         City = city;
     }
 }

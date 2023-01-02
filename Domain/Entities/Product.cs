@@ -13,7 +13,7 @@ public class Product :Entity
     public int CategoryId { get; set; }
     public int CompanyId { get; set; }
 
-    public int Name { get; set; }
+    public string Name { get; set; }
     public string Description { get; set; }
 
     public int Quantity { get; set; }
@@ -30,7 +30,7 @@ public class Product :Entity
 
     }
 
-    public Product(int id, int brandId, int colorId,int companyId, int categoryId, int quantity, decimal cost, int name, string description, DateTime createdDate): this()
+    public Product(int id, int brandId, int colorId,int companyId, int categoryId, int quantity, decimal cost, string name, string description, DateTime createdDate): this()
     {
         Id = id;
         
