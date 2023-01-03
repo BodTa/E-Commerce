@@ -1,7 +1,10 @@
 ﻿
 
+using Core.Persistence.Repositories;
+using Core.Security.Entities;
+
 namespace Application.Services.Repositories;
 
-public interface IOtpAuthenticatorRepository
+public interface IOtpAuthenticatorRepository : IAsyncRepository<OtpAuthenticator>,IRepository<OtpAuthenticator>
 {
 }
