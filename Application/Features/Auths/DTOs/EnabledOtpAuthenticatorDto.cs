@@ -1,4 +1,4 @@
-﻿namespace Application.Features.Auths.Dtos;
+﻿namespace Application.Features.Auths.DTOs;
 
 public class EnabledOtpAuthenticatorDto
 {
