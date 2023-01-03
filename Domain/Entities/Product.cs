@@ -18,12 +18,12 @@ public class Product :Entity
 
     public int Quantity { get; set; }
     public decimal Cost { get; set; }
+    public DateTime CreatedDate { get; set; }
 
     public virtual Color? Color { get; set; }
     public virtual Brand? Brand { get; set; }
     public virtual Category? Category { get; set; }
     public virtual Company? Company { get; set; }   
-    public DateTime CreatedDate { get; set; }
 
     public Product()
     {

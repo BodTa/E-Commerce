@@ -92,7 +92,6 @@ public class BaseDbContext : DbContext
             c.ToTable("Categories").HasKey(c => c.Id);
             c.Property(c => c.Id).HasColumnName("Id");
             c.Property(c => c.Name).HasColumnName("Name");
-            c.Property(c => c.Description).HasColumnName("Description");
             c.HasMany(c => c.Brands);
         });
 
@@ -149,7 +148,7 @@ public class BaseDbContext : DbContext
         Color[] colorSeeds = { new(1, "White"), new(2, "Black"), new(3, "Red") };
         modelBuilder.Entity<Color>().HasData(colorSeeds);
 
-        Category[] categorySeeds = { new(1, "Technology", "Technology Products"), new(2, "Clothing", "Clothing Products"), new(3, "Food", "Food Products") };
+        Category[] categorySeeds = { new(1, "Technology"), new(2, "Clothing"), new(3, "Food") };
         modelBuilder.Entity<Category>().HasData(categorySeeds);
 
         Company[] companySeeds = { new(1, "Bursa Comp", "Since 1999", DateTime.Now, City.Bursa),new(2,"Yalova Comp","Since 2005",DateTime.Now,City.Yalova) };
