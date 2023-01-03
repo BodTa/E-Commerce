@@ -20,6 +20,6 @@ public class MappingProfiles : Profile
         CreateMap<Category,CreateCategoryCommand>().ReverseMap();
         CreateMap<Category,DeleteCategoryCommand>().ReverseMap();
         CreateMap<Category,UpdateCategoryCommand>().ReverseMap();
-        CreateMap<Category, GetListCategoryDto>().ReverseMap()
+        CreateMap<Category, GetListCategoryDto>().ReverseMap();
     }
 }

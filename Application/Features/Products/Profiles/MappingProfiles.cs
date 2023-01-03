@@ -23,7 +23,7 @@ public class MappingProfiles : Profile
 		CreateMap<Product, ProductListDto>().ForMember(p => p.BrandName, opt => opt.MapFrom(p => p.Brand.Name))
 			.ForMember(p => p.CompanyName, opt => opt.MapFrom(p => p.Company.Name))
 			.ForMember(p => p.ColorName, opt => opt.MapFrom(p => p.Color.Name))
-			.ForMember(p => p.CategoryName, opt => opt.MapFrom(p => p.Category.Name);
+			.ForMember(p => p.CategoryName, opt => opt.MapFrom(p => p.Category.Name));
 
     }
 }

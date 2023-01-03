@@ -7,63 +7,50 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <Folder Include="Features\Auths\DTOs\" />
     <Folder Include="Features\Auths\Models\" />
-    <Folder Include="Features\Auths\Profiles\" />
     <Folder Include="Features\Auths\Tests\" />
     <Folder Include="Features\Auths\Rules\" />
     <Folder Include="Features\Auths\Queries\" />
-    <Folder Include="Features\Brands\DTOs\" />
     <Folder Include="Features\Brands\Models\" />
     <Folder Include="Features\Brands\Constants\" />
     <Folder Include="Features\Brands\Rules\" />
-    <Folder Include="Features\Brands\Profiles\" />
     <Folder Include="Features\Categories\Constants\" />
-    <Folder Include="Features\Categories\DTOs\" />
     <Folder Include="Features\Categories\Models\" />
-    <Folder Include="Features\Categories\Profiles\" />
     <Folder Include="Features\Categories\Rules\" />
-    <Folder Include="Features\Colors\Commands\CreateColor\" />
-    <Folder Include="Features\Colors\Commands\DeleteColor\" />
-    <Folder Include="Features\Colors\Commands\UpdateColor\" />
     <Folder Include="Features\Colors\Constants\" />
-    <Folder Include="Features\Colors\DTOs\" />
     <Folder Include="Features\Colors\Models\" />
-    <Folder Include="Features\Colors\Profiles\" />
     <Folder Include="Features\Colors\Rules\" />
     <Folder Include="Features\Companies\Constants\" />
     <Folder Include="Features\Companies\DTOs\" />
     <Folder Include="Features\Companies\Models\" />
-    <Folder Include="Features\Companies\Profiles\" />
     <Folder Include="Features\Companies\Rules\" />
     <Folder Include="Features\OperationClaims\Constants\" />
     <Folder Include="Features\OperationClaims\DTOs\" />
     <Folder Include="Features\OperationClaims\Models\" />
-    <Folder Include="Features\OperationClaims\Profiles\" />
     <Folder Include="Features\OperationClaims\Rules\" />
     <Folder Include="Features\UserOperationClaims\Constants\" />
     <Folder Include="Features\UserOperationClaims\DTOs\" />
     <Folder Include="Features\UserOperationClaims\Models\" />
-    <Folder Include="Features\UserOperationClaims\Profiles\" />
     <Folder Include="Features\UserOperationClaims\Rules\" />
     <Folder Include="Features\Products\Constants\" />
     <Folder Include="Features\Products\DTOs\" />
     <Folder Include="Features\Products\Models\" />
-    <Folder Include="Features\Products\Profiles\" />
     <Folder Include="Features\Products\Rules\" />
     <Folder Include="Features\Users\Constants\" />
     <Folder Include="Features\Users\DTOs\" />
     <Folder Include="Features\Users\Models\" />
-    <Folder Include="Features\Users\Profiles\" />
     <Folder Include="Features\Users\Rules\" />
   </ItemGroup>
 
   <ItemGroup>
+    <PackageReference Include="AutoMapper" Version="12.0.0" />
+    <PackageReference Include="MediatR" Version="10.0.1" />
     <PackageReference Include="Microsoft.Extensions.DependencyInjection.Abstractions" Version="6.0.0" />
   </ItemGroup>
 
   <ItemGroup>
     <ProjectReference Include="..\..\corePackages\Core.Security\Core.Security.csproj" />
+    <ProjectReference Include="..\Domain\Domain.csproj" />
   </ItemGroup>
 
 </Project>
