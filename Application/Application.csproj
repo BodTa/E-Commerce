@@ -13,32 +13,24 @@
     <Folder Include="Features\Auths\Queries\" />
     <Folder Include="Features\Brands\Models\" />
     <Folder Include="Features\Brands\Constants\" />
-    <Folder Include="Features\Brands\Rules\" />
     <Folder Include="Features\Categories\Constants\" />
-    <Folder Include="Features\Categories\Models\" />
     <Folder Include="Features\Categories\Rules\" />
     <Folder Include="Features\Colors\Constants\" />
-    <Folder Include="Features\Colors\Models\" />
     <Folder Include="Features\Colors\Rules\" />
     <Folder Include="Features\Companies\Constants\" />
     <Folder Include="Features\Companies\DTOs\" />
-    <Folder Include="Features\Companies\Models\" />
     <Folder Include="Features\Companies\Rules\" />
     <Folder Include="Features\OperationClaims\Constants\" />
     <Folder Include="Features\OperationClaims\DTOs\" />
-    <Folder Include="Features\OperationClaims\Models\" />
     <Folder Include="Features\OperationClaims\Rules\" />
     <Folder Include="Features\UserOperationClaims\Constants\" />
     <Folder Include="Features\UserOperationClaims\DTOs\" />
-    <Folder Include="Features\UserOperationClaims\Models\" />
     <Folder Include="Features\UserOperationClaims\Rules\" />
     <Folder Include="Features\Products\Constants\" />
     <Folder Include="Features\Products\DTOs\" />
-    <Folder Include="Features\Products\Models\" />
     <Folder Include="Features\Products\Rules\" />
     <Folder Include="Features\Users\Constants\" />
     <Folder Include="Features\Users\DTOs\" />
-    <Folder Include="Features\Users\Models\" />
     <Folder Include="Features\Users\Rules\" />
   </ItemGroup>
 
@@ -49,6 +41,7 @@
   </ItemGroup>
 
   <ItemGroup>
+    <ProjectReference Include="..\..\corePackages\Core.Application\Core.Application.csproj" />
     <ProjectReference Include="..\..\corePackages\Core.Security\Core.Security.csproj" />
     <ProjectReference Include="..\Domain\Domain.csproj" />
   </ItemGroup>
