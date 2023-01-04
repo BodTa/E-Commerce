@@ -15,7 +15,6 @@
     <Folder Include="Features\Brands\Constants\" />
     <Folder Include="Features\Categories\Constants\" />
     <Folder Include="Features\Colors\Constants\" />
-    <Folder Include="Features\Colors\Rules\" />
     <Folder Include="Features\Companies\Constants\" />
     <Folder Include="Features\Companies\DTOs\" />
     <Folder Include="Features\Companies\Rules\" />
