@@ -4,7 +4,9 @@ using Application.Features.Products.Commands.CreateProduct;
 using Application.Features.Products.Commands.DeleteProduct;
 using Application.Features.Products.Commands.UpdateProduct;
 using Application.Features.Products.DTOs;
+using Application.Features.Products.Models;
 using AutoMapper;
+using Core.Persistence.Paging;
 using Domain.Entities;
 
 namespace Application.Features.Products.Profiles;
@@ -24,6 +26,6 @@ public class MappingProfiles : Profile
 			.ForMember(p => p.CompanyName, opt => opt.MapFrom(p => p.Company.Name))
 			.ForMember(p => p.ColorName, opt => opt.MapFrom(p => p.Color.Name))
 			.ForMember(p => p.CategoryName, opt => opt.MapFrom(p => p.Category.Name));
-
+		CreateMap<IPaginate<Product>, ProductListModel>().ReverseMap();
     }
 }

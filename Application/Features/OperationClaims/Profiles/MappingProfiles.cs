@@ -4,7 +4,9 @@ using Application.Features.OperationClaims.Commands.CreateOperationClaim;
 using Application.Features.OperationClaims.Commands.DeleteOperationClaim;
 using Application.Features.OperationClaims.Commands.UpdateOperationClaim;
 using Application.Features.OperationClaims.DTOs;
+using Application.Features.OperationClaims.Models;
 using AutoMapper;
+using Core.Persistence.Paging;
 using Core.Security.Entities;
 
 namespace Application.Features.OperationClaims.Profiles;
@@ -21,6 +23,7 @@ public class MappingProfiles : Profile
 		CreateMap<OperationClaim,DeleteOperationClaimCommand>().ReverseMap();
         CreateMap<OperationClaim,OperationClaimDto>().ReverseMap();
         CreateMap<OperationClaim,OperationClaimListDto>().ReverseMap();
+		CreateMap<IPaginate<OperationClaim>, OperationClaimListModel>().ReverseMap();
 
     }
 }

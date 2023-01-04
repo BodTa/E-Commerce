@@ -2,7 +2,7 @@
 
 namespace Application.Features.Colors.DTOs;
 
-public class GetListColorDto
+public class ColorListDto
 {
     public int Id { get; set; }
     public string Name { get; set; }

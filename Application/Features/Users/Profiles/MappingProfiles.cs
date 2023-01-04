@@ -5,7 +5,9 @@ using Application.Features.Users.Commands.DeleteUser;
 using Application.Features.Users.Commands.UpdateUser;
 using Application.Features.Users.Commands.UpdateUserFromAuth;
 using Application.Features.Users.Dtos;
+using Application.Features.Users.Models;
 using AutoMapper;
+using Core.Persistence.Paging;
 using Core.Security.Entities;
 
 namespace Application.Features.Users.Profiles;
@@ -24,5 +26,6 @@ public class MappingProfiles : Profile
         CreateMap<User, UpdateUserFromAuthCommand>().ReverseMap();
         CreateMap<User,UserDto>().ReverseMap();
         CreateMap<User,UserListDto>().ReverseMap();
+        CreateMap<IPaginate<User>, UserListModel>().ReverseMap();
     }
 }
