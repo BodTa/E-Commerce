@@ -17,7 +17,6 @@
     <Folder Include="Features\Colors\Constants\" />
     <Folder Include="Features\Companies\Constants\" />
     <Folder Include="Features\Companies\DTOs\" />
-    <Folder Include="Features\Companies\Rules\" />
     <Folder Include="Features\OperationClaims\Constants\" />
     <Folder Include="Features\OperationClaims\DTOs\" />
     <Folder Include="Features\OperationClaims\Rules\" />
