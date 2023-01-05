@@ -1,7 +1,9 @@
 ﻿
 using Application.Features.Products.DTOs;
+using Application.Features.Products.Rules;
 using Application.Services.Repositories;
 using AutoMapper;
+using Domain.Entities;
 using MediatR;
 
 namespace Application.Features.Products.Commands.CreateProduct;
@@ -25,17 +27,20 @@ public class CreateProductCommandHandler : IRequestHandler<CreateProductCommand,
 {
     private readonly IMapper _mapper;
     private readonly IProductRepository _productRepository;
+    private readonly ProductBusinessRules _productBusinessRules;
 
-    public CreateProductCommandHandler(IMapper mapper, IProductRepository productRepository)
+    public CreateProductCommandHandler(IMapper mapper, IProductRepository productRepository, ProductBusinessRules productBusinessRules)
     {
         _mapper = mapper;
         _productRepository = productRepository;
+        _productBusinessRules = productBusinessRules;
     }
 
-    public Task<CreatedProductDto> Handle(CreateProductCommand request, CancellationToken cancellationToken)
+    public async Task<CreatedProductDto> Handle(CreateProductCommand request, CancellationToken cancellationToken)
     {
-        
-
-        throw new NotImplementedException();
+        await _productBusinessRules.ACompanyCannotCreateSameNamedProduct(request.CompanyId, request.Name);
+        var mappedProduct = _mapper.Map<Product>(request);
+        var createdProduct = await _productRepository.AddAsync(mappedProduct);
+        return _mapper.Map<CreatedProductDto>(createdProduct);
     }
 }

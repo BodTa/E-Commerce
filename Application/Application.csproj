@@ -19,13 +19,11 @@
     <Folder Include="Features\Companies\DTOs\" />
     <Folder Include="Features\OperationClaims\Constants\" />
     <Folder Include="Features\OperationClaims\DTOs\" />
-    <Folder Include="Features\OperationClaims\Rules\" />
     <Folder Include="Features\UserOperationClaims\Constants\" />
     <Folder Include="Features\UserOperationClaims\DTOs\" />
     <Folder Include="Features\UserOperationClaims\Rules\" />
     <Folder Include="Features\Products\Constants\" />
     <Folder Include="Features\Products\DTOs\" />
-    <Folder Include="Features\Products\Rules\" />
     <Folder Include="Features\Users\Constants\" />
     <Folder Include="Features\Users\DTOs\" />
     <Folder Include="Features\Users\Rules\" />

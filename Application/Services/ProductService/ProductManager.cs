@@ -17,6 +17,9 @@ public class ProductManager : IProductService
 
     public async Task<Product> GetProductById(int id)
     {
-         return await _productRepository.GetAsync(p => p.Id == id,p=>p.Include(p=>p.Company));
+         return await _productRepository.GetAsync(p => p.Id == id,p=>p.Include(p=>p.Company)
+                                                                                                                 .Include(p=>p.Brand)
+                                                                                                                 .Include(p=>p.Category)
+                                                                                                                 .Include(p=>p.Color));
     }
 }
