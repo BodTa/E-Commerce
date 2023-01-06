@@ -35,7 +35,7 @@ public class RegisterCommandHandler : IRequestHandler<RegisterCommand, Registere
         await _authBusinessRules.UserEmailShouldBeNotExists(request.UserForRegisterDto.Email);
 
         byte[] passwordHash, passwordSalt;
-        HashingHelper.CreatePasswordHash(request.UserForRegisterDto.Password,passwordHash, out passwordSalt);
+        HashingHelper.CreatePasswordHash(request.UserForRegisterDto.Password,out passwordHash, out passwordSalt);
         User newUser = new()
         {
             Email = request.UserForRegisterDto.Email,

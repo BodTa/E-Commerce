@@ -44,7 +44,7 @@ public class AuthManager : IAuthService
         return await _refreshTokenRepository.AddAsync(refreshToken);
     }
 
-    public async Task DeleteOldRefreshToken(int userId)
+    public async Task DeleteOldRefreshTokens(int userId)
     {
         IList<RefreshToken> refreshTokens = (await _refreshTokenRepository.GetListAsync(r =>
         r.UserId == userId &&
@@ -55,8 +55,33 @@ public class AuthManager : IAuthService
         foreach(RefreshToken refreshToken in refreshTokens) await _refreshTokenRepository.DeleteAsync(refreshToken);
     }
 
-    public async Task<RefreshToken?> GetRefreshTokenByAccessToken(string token)
+    public async Task<RefreshToken?> GetRefreshTokenByToken(string token)
     {
        return await _refreshTokenRepository.GetAsync(r=>r.Token == token);
     }
+
+    public async Task RevokeRefreshToken(RefreshToken refreshToken,string ipAdress, string? reason = null, string? replacedToken = null)
+    {
+        refreshToken.Revoked = DateTime.UtcNow;
+        refreshToken.RevokedByIp = ipAdress;
+        refreshToken.ReasonRevoked = reason;
+        refreshToken.ReplacedByToken = replacedToken;
+        await _refreshTokenRepository.UpdateAsync(refreshToken);
+    }
+
+    public async Task RevokeDescendantRefreshTokens(RefreshToken refreshToken,string ipAdress,string reason)
+    {
+        RefreshToken childToken = await _refreshTokenRepository.GetAsync(r => r.Token == refreshToken.ReplacedByToken);
+        if(childToken != null && childToken.Revoked != null && childToken.Expires <= DateTime.UtcNow)
+            await RevokeRefreshToken(childToken, ipAdress, reason);
+        else await RevokeDescendantRefreshTokens(childToken,ipAdress, reason);
+    }
+
+    public async Task<RefreshToken> RotateRefreshToken(User user, RefreshToken refreshToken, string ipAdress)
+    {
+        RefreshToken newRefreshToken =  _tokenHelper.CreateRefreshToken(user, ipAdress);
+        await RevokeRefreshToken(refreshToken, ipAdress, "Replaced by new token", newRefreshToken.Token);
+        return newRefreshToken;
+    }
+
 }
