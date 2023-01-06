@@ -9,7 +9,7 @@ public interface IAuthService
     public Task<AccessToken> CreateAccessToken(User user);
     public Task<RefreshToken> CreateRefreshToken(User user,string ipAdress);
 
-    public Task<RefreshToken?> GetRefreshTokenByAccessToken(string token);
+    public Task<RefreshToken?> GetRefreshTokenByToken(string token);
 
     public Task<RefreshToken> AddRefreshToken(RefreshToken refreshToken);
 

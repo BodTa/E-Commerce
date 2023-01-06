@@ -45,7 +45,7 @@ public class LoginCommandHandler : IRequestHandler<LoginCommand, LoggedDto>
         }
         var accessToken = await _authService.CreateAccessToken(user);
         var refreshToken = await _authService.CreateRefreshToken(user, request.IpAdress);
-        await _authService.DeleteOldRefreshToken(user.Id);
+        await _authService.DeleteOldRefreshTokens(user.Id);
         loggedDto.AccessToken = accessToken;
         loggedDto.RefreshToken = refreshToken;
         return loggedDto;

@@ -45,9 +45,7 @@ public class RefreshTokenCommandHandler : IRequestHandler<RefreshTokenCommand, R
         await _authService.DeleteOldRefreshTokens(user.Id);
 
         var createdAccessToken = await _authService.CreateAccessToken(user);
-        
-        RefreshedTokensDto refreshedTokensDto = new() { AccessToken = createdAccessToken ,RefreshToken = addedRefreshToken};
-
-        return refreshedTokensDto;
+         
+       return new RefreshedTokensDto { AccessToken = createdAccessToken, RefreshToken = addedRefreshToken };
     }
 }

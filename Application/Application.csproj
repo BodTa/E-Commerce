@@ -9,7 +9,6 @@
   <ItemGroup>
     <Folder Include="Features\Auths\Models\" />
     <Folder Include="Features\Auths\Tests\" />
-    <Folder Include="Features\Auths\Rules\" />
     <Folder Include="Features\Auths\Queries\" />
     <Folder Include="Features\Brands\Models\" />
     <Folder Include="Features\Brands\Constants\" />
